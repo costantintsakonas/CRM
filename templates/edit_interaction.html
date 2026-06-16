@@ -1,0 +1,30 @@
+{% extends 'base_employee.html' %}
+
+{% block title %}Edit Interaction{% endblock %}
+
+{% block content %}
+
+<h1>Edit Interaction</h1>
+
+<form method="post">
+    
+   <input type="text" name="user_id" value="{{session['uid']}}" required/> (User id)(*) <br>
+    <input type="text" name="customer_id" value="{{interactions['customer_id']}}" required/> (Customer id)(*)  <br>
+    <input type="text" name="subject" value="{{interactions['subject']}}" /> (Subject)<br>
+    <textarea id = "notes" name="notes" value="{{interactions['notes']}}" rows="4" cols="50"/></textarea> (Notes)<br>
+    <input type="datetime-local" name="interaction_date" value="{{interactions['interaction_date']}}" required/> (interaction Date)(*) <br> 
+    <select id="type" name="type">
+        <option value="phone" selected>Phone</option>
+        <option value="email">Email</option>
+        <option value="meeting">Meeting</option>
+        <option value="webmeeting">Web Meeting</option>
+    </select> (Type)<br> 
+    <select id="customer_responded" name="customer_responded">
+        <option value="yes" selected>Yes</option>
+        <option value="no">No</option>
+    </select> (Response)<br> 
+    <button type="submit">Submit</button><br>
+    (*) Required Fiels
+</form>
+
+{% endblock %}

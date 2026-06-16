@@ -1,0 +1,37 @@
+{% extends 'base_employee.html' %}
+
+{% block title %}Manager Dashboard{% endblock %}
+
+{% block content %}
+
+<h1>My Dashboard</h1>
+
+<hr>
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Employee List</h5>
+        <p class="card-text">View all employees.</p>
+         <a href="/employees" class="btn btn-primary">Go to list</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add Employee</h5>
+        <p class="card-text">Select this card to add a new customer.</p>
+        <a href="/add/customer" class="btn btn-primary">Add Customer</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div style="text-align: center;"><a href="/logout">Logout</a></div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base_employee.html' %}
+
+{% block title %}Customer History{% endblock %}
+
+{% block content %}
+
+<h1>Customer History Card</h1>
+<hr>
+
+<hr>
+<a href="/add/interaction/{{cid}}" class="btn btn-primary">Add Interaction</a>
+<hr>
+{%for interaction in interactions%}
+<div class="card">
+  <div class="card-header">
+    Date:{{ interaction['interaction_date'] }} - Type: {{ interaction['type'] }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ interaction['subject'] }}</h5>
+    <p class="card-text">{{ interaction['notes'] }}</p>
+    <a href="/edit/interaction/{{interaction['interaction_id']}}" class="btn btn-primary">edit</a>
+  </div>
+</div>
+<hr>
+{%endfor%}
+
+
+<br>
+<br>
+
+<br>
+<br>
+<div style="text-align: center;"><a href="/logout">Logout</a></div>
+
+{% endblock %}

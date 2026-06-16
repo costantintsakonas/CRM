@@ -1,0 +1,24 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}Blocked User List{% endblock %}
+
+{% block content %}
+
+<h1>Blocked Users</h1>
+
+<div>
+    {% for user in blocked_users %}
+    <div>
+        <h2>Username:<em><u>{{ user['username'] }}</u></em></h2>
+        <p>Role:{{ user['role'] }}</p>
+        <p>Status:{{ user['is_active'] }}</p>
+        {% if user['role']!='admin'%}
+        <a href="/edit/user/{{ user['uid'] }}""><button class="btn info">Edit</button></a>
+        <a href="/delete/user/{{ user['uid'] }}"><button class="btn info">Delete</button></a>
+        {% endif %}
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

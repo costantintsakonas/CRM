@@ -1,0 +1,23 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block content %}
+
+
+<h1>Edit User</h1>
+
+<form method="post">
+    <input type="text" name="username"  value="{{ user['username'] }}" /> <br>
+    <select id="role" name="role">
+            <option value="employee" selected>Employee</option>
+            <option value="manager">Manager</option>
+        </select><br>   
+        <select id="status" name="status">
+            <option value="active" selected>Active</option>
+            <option value="blocked">Blocked</option>
+        </select><br>   
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

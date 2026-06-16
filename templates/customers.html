@@ -1,0 +1,30 @@
+{% extends 'base_employee.html' %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+
+<h1>My Customers</h1>
+<hr>
+<div>
+    {% for customer in my_customers %}
+    <div>
+        <h2><em><u>{{ customer['first_name'] }} {{ customer['last_name'] }}</u></em></h2>
+        <h2>email: {{ customer['email'] }}</h2>
+        <h2>phone: {{ customer['phone'] }}</h2>
+        <h2>address: {{ customer['address'] }}</h2>
+        <h2>company: {{ customer['company'] }}</h2>
+        <h2>status: {{ customer['status'] }}</h2>
+
+
+        <a href="/edit/customer/{{ customer['cid'] }}""><button class=" btn info">Edit</button></a>
+        <a href="/delete/customer/{{ customer['cid'] }}"><button class="btn info">Delete</button></a>
+        <a href="/customer/history/{{ customer['cid'] }}"><button class="btn info">View History</button></a>
+
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}Administrator Dashboard{% endblock %}
+
+{% block content %}
+
+<h1>Administrator Dashboard</h1>
+<hr>
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Users List</h5>
+        <p class="card-text">View all users.</p>
+         <a href="/users" class="btn btn-primary">Go to list</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add User</h5>
+        <p class="card-text">Select this card to add a new user.</p>
+        <a href="register" class="btn btn-primary">Add User</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div style="text-align: center;"><a href="/logout">Logout</a></div>
+
+{% endblock %}
